@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Anonymous_311018.Models.Department>
+@{
     ViewBag.Title = "Index";
 }
 
@@ -6,10 +7,10 @@
 <table id="dept_index_table" class="table table-striped table-bordered">
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Departments</th>
-            <th>Number of Student</th>
-            <th>Number of Faculty</th>
+            <th>@Html.DisplayNameFor(model=>model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.NumberofStudent)</th>
+            <th>@Html.DisplayNameFor(model => model.NumberofFaculty)</th>
         </tr>
 
     </thead>
