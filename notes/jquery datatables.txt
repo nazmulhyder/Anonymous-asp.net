@@ -1,0 +1,55 @@
+============JQuery Theme Roller===================================
+link :https://datatables.net/examples/styling/jqueryUI.html
+JS-->
+https://code.jquery.com/jquery-3.3.1.js
+https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js
+https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js
+CSS-->
+https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css
+https://cdn.datatables.net/1.10.19/css/dataTables.jqueryui.min.css
+============JQuery Material Design===================================
+link :https://datatables.net/examples/styling/material.html
+JS---->
+$(document).ready(function() {
+    $('#example').DataTable( {
+        columnDefs: [
+            {
+                targets: [ 0, 1, 2 ],
+                className: 'mdl-data-table__cell--non-numeric'
+            }
+        ]
+    } );
+} )
+https://code.jquery.com/jquery-3.3.1.js
+https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js
+https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js
+CSS--->
+https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css
+https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css
+
+table -->
+<table id="example" class="mdl-data-table" style="width:100%">
+
+============UIKit 3(Tech.preview)===================================
+JS---->
+https://code.jquery.com/jquery-3.3.1.js
+https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js
+https://cdn.datatables.net/1.10.19/js/dataTables.uikit.min.js
+CSS--->
+https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/css/uikit.min.css
+https://cdn.datatables.net/1.10.19/css/dataTables.uikit.min.css
+table ----->
+<table id="example" class="uk-table uk-table-hover uk-table-striped" style="width:100%">
+
+============JQuery Semantic UI===================================
+link : https://datatables.net/examples/styling/semanticui.html
+JS---->
+https://code.jquery.com/jquery-3.3.1.js
+https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js
+https://cdn.datatables.net/1.10.19/js/dataTables.semanticui.min.js
+https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js
+CSS--->
+https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css
+https://cdn.datatables.net/1.10.19/css/dataTables.semanticui.min.css
+table ----->
+<table id="example" class="ui celled table" style="width:100%">

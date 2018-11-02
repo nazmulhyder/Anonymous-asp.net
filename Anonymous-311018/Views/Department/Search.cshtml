@@ -1,0 +1,68 @@
+﻿@using Anonymous_311018.Models
+@model Anonymous_311018.Models.Department
+@{
+    ViewBag.Title = "Search";
+    List<Department> departments = ViewBag.department;
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" href="/custom-css/departmentSearch.css"/>
+
+
+<h2>Department Search</h2>
+
+@*<div class="container">
+    <div class="row">
+        <div class="col-lg-2">
+            Department Id
+        </div>
+        <div class="col-lg-4">
+            <input type="text"/>
+        </div>
+        <div class="col-lg-2">
+            Department
+        </div>
+        <div class="col-lg-4">
+            <input type="text"/>
+        </div>
+    </div>
+</div>*@
+
+
+  <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Departments</th>
+            <th>Number of Student</th>
+            <th>Number of Faculty</th>
+        </tr>
+
+        </thead>
+        <tbody>
+            @if (departments != null)
+            {
+                foreach (Department department in departments)
+                {
+
+                    <tr>
+                        <td>
+                            @department.Id
+                        </td>
+                        <td>
+                            @department.Name
+                        </td>
+                        <td>
+                            <i>under construction!</i>
+                        </td>
+                        <td>
+                            <i>under construction!</i>
+                        </td>
+                    </tr>
+                }
+
+            }
+
+        </tbody>
+    </table>
+
+
