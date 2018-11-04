@@ -14,7 +14,7 @@ namespace Anonymous_311018.Controllers
         // GET: Department
         public ActionResult Index()
         {
-           return View();
+           return View(db.Departments.ToList());
         }
         public ActionResult GetDeptList()
         {

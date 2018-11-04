@@ -3,81 +3,123 @@
     ViewBag.Title = "Index";
 }
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
 <h2>Department(Index)</h2>
 <table id="dept_index_table" class="table table-striped table-bordered">
     <thead>
         <tr>
-            <th>@Html.DisplayNameFor(model=>model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
             <th>@Html.DisplayNameFor(model => model.Name)</th>
-            <th>@Html.DisplayNameFor(model => model.NumberofStudent)</th>
-            <th>@Html.DisplayNameFor(model => model.NumberofFaculty)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.NumberofStudent)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.NumberofFaculty)</th>
+            <th class ="text-center">
+                Action
+            </th>
         </tr>
 
     </thead>
+    <tbody>
+    
+     @if (Model != null)
+     {
+         foreach (var item in Model)
+         {
+
+             <tr>
+                 <td>
+                     @Html.DisplayFor(modelItem => item.Id)
+                 </td>
+                 <td>
+                     @Html.DisplayFor(modelItem => item.Name)
+                 </td>
+                 <td class="text-center">
+                     @Html.DisplayFor(modelItem => item.NumberofStudent)
+                 </td>
+                 <td class="text-center">
+                     @Html.DisplayFor(modelItem => item.NumberofFaculty)
+                 </td>
+                 <td class="text-center">
+                     @*<a> <i class="fa fa-eye" style="color: black"></i></a> |
+                     <a><i class="fa fa-pencil" aria-hidden="true"></i> </a>*@
+                     <a href="" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a> 
+                     <a href="" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></a> 
+                     <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
+
+
+                 </td>
+             </tr>
+
+         }
+     }
+    </tbody>
     <tfoot>
         <tr>
             <th>Id</th>
             <th>Departments</th>
-            <th>Number of Student</th>
-            <th>Number of Faculty</th>
+            <th class="text-center">Number of Student</th>
+            <th class="text-center">Number of Faculty</th>
+            <th class="text-center">Action</th>
 
         </tr>
     </tfoot>
 </table>
+        
+    
 
-@* ----- This is normal JQuery data-table--------- *@
-@*<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />*@
-@* :::::::::::::::: JQuery Theme Roller :::::::::::::::: *@
-@*<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.jqueryui.min.css" />*@
-
-@* :::::::::::::::: JQuery Material Design :::::::::::::::: *@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css" />
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css" />
-
-@* :::::::::::::::: Bootstrap4 Design CSS:::::::::::::::: *@
-@*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />*@
-
-
-@section scripts {
     @* ----- This is normal JQuery data-table--------- *@
-    @*<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>*@
+    @*<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />*@
+    @* :::::::::::::::: JQuery Theme Roller :::::::::::::::: *@
+    @*<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.jqueryui.min.css" />*@
 
-    <!-- This is JQuery theme roller -->
-    @*<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    @* :::::::::::::::: JQuery Material Design :::::::::::::::: *@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css" />
+
+    @* :::::::::::::::: Bootstrap4 Design CSS:::::::::::::::: *@
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />*@
+
+
+    @section scripts {
+        @* ----- This is normal JQuery data-table--------- *@
+        @*<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>*@
+
+        <!-- This is JQuery theme roller -->
+        @*<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>*@
+        <!-- This is JQuery Material Design -->
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>*@
-    <!-- This is JQuery Material Design -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
 
-    <!-- Bootstrap4 Design -->
-    @*<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>*@
-    <script>
-        $(document).ready(function () {
-            $('#dept_index_table').DataTable({
-                "ajax": {
-                    "url": "/Department/GetDeptList",
-                    "type": "GET",
-                    "datatype": "json"
+        <!-- Bootstrap4 Design -->
+        @*<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>*@
+        <script>
+             $(document).ready(function () {
+                 $('#dept_index_table').DataTable({
+                    //"ajax": {
+                    //    "url": "/Department/GetDeptList",
+                    //    "type": "GET",
+                    //    "datatype": "json"
 
 
-                },
-                "columns": [
+                    //},
+                    //"columns": [
 
-                    { "data": "Id", "autoWidth": true },
-                    { "data": "Name", "autoWidth": true },
-                    { "data": "NumberofStudent", "position": true },
-                    { "data": "NumberofFaculty", "autoWidth": true }
+                    //    { "data": "Id", "autoWidth": true },
+                    //    { "data": "Name", "autoWidth": true },
+                    //    { "data": "NumberofStudent", "position": true },
+                    //    { "data": "NumberofFaculty", "autoWidth": true }
 
-                ]
+                    //]
 
 
-            });
-        });
-    </script>
-}
+                 });
+              });
+        </script>
+    }

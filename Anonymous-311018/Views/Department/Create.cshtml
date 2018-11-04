@@ -9,23 +9,40 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken();
-    <p>
-        @ViewBag.message
-    </p>
+
+        if (!String.IsNullOrEmpty(ViewBag.message))
+         {
+             <div class="alert alert-success alert-dismissible">
+                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                 <strong>@ViewBag.message</strong> 
+             </div>
+         }
+    
+    
     <div class="form-horizontal">
         <div class="form-group">
             @Html.LabelFor(model=>model.Name,htmlAttributes:new {@class="col-md-2 control-label"})
-            <div class="col-md-10">
+            <div class="col-md-10" id="inputFld">
                 @Html.TextBoxFor(model => model.Name,htmlAttributes:new{@class="form-control"})
             </div>   
         </div>
         
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" name="submit" value="save" class="btn btn-success"/>
+                <input id="btnSubmit" type="submit" name="submit" value="save" class="btn btn-success"/>
             </div>
         </div>
     </div>
 }
-
+@section scripts
+{
+    <script>
+        $(document).ready(function(){
+            $('#btnSubmit').click(function() {
+            $('#inputFld')[0].reset();
+        });
+        });
+        
+    </script>
+}
 
